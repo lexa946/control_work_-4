@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:15
+    env_file:
+      - .env-postgres
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+
+  analyzer:
+    image: analyzer
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+      tags:
+        - "analyzer:latest"
+    depends_on:
+      postgres:
+        condition: service_healthy
