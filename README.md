@@ -54,8 +54,7 @@ git clone https://github.com/lexa946/control_work_-4.git
 docker-compose up -d
 ```
 5. Дожидаемся запуска.<br>Должно получится следующее:<br>
-
-![docker start](./img/docker-compose starts.png)
+![docker](./img/docker.png)
 
 6. Проверяем отработку проекта
 ```shell
